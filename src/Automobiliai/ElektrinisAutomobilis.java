@@ -14,4 +14,7 @@ public class ElektrinisAutomobilis extends Automobilis{
         return baterijosKrovimoLaikas;
     }
 
+    public void setBaterijosKrovimoLaikas(double baterijosKrovimoLaikas) {
+        this.baterijosKrovimoLaikas = baterijosKrovimoLaikas;
+    }
 }

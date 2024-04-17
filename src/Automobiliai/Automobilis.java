@@ -6,6 +6,8 @@ public class Automobilis {
     private String metai;
     private double kaina;
 
+    private long rida;
+
     public Automobilis(String marke, String modelis, String metai, double kaina) {
         setMarke(marke);
         setModelis(modelis);
@@ -42,6 +44,14 @@ public class Automobilis {
 
     public void setMetai(String metai) {
         this.metai = metai;
+    }
+
+    public void setRida(long rida) {
+        this.rida = rida;
+    }
+
+    public long getRida() {
+        return rida;
     }
 
     public void setKaina(double kaina) {
