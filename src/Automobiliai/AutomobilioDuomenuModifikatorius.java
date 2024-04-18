@@ -3,7 +3,7 @@ package Automobiliai;
 import java.util.Scanner;
 
 
-public class AutomobilioDuomenuModifikatorius {
+public abstract class AutomobilioDuomenuModifikatorius {
     Scanner scanner = new Scanner(System.in);
     public NaftosKuroAutomobilis duomenuModifikatorius(NaftosKuroAutomobilis auto, double kuroSanaudos) {
         auto.setKuroSanaudos100km(kuroSanaudos);
@@ -18,4 +18,9 @@ public class AutomobilioDuomenuModifikatorius {
         auto.setRida(rida);
         return auto;
     }
+    void pridedamRida(Automobilis a){
+
+    }
+
+    abstract void pridedamRida(ElektrinisAutomobilis a);
 }
