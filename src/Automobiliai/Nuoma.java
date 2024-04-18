@@ -6,9 +6,38 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Nuoma {
+    KlientuSarasas klientuSarasas = new KlientuSarasas();
     Scanner scanner = new Scanner(System.in);
-    public List<Automobilis> automobiliuSarasas = new ArrayList<>();
+    public static List<Automobilis> automobiliuSarasas = new ArrayList<>();
+    public void menu(){
+        System.out.println("Prideti automobili(1), pasalinti(2), priskirti automobilis klientui(3), klientas grazino automobili(4), " +
+                "modifikuoti parametrus(5), " + "ziureti kliento nuomotu masinu sarasa(6), " + "ziureti kliento dabar nuomojama masina(7), " +
+                "iseiti(8)");
+        int pasirinko = scanner.nextInt();
+        scanner.nextLine();
+        switch (pasirinko){
+            case 1:
+                pridekAutomobiliUser();
+                break;
+            case 2:
+                pasiimkAutomobili();
+                break;
+            case 3:
+                klientuSarasas.priskirtiAuto();
+                break;
+            case 4:
+                klientuSarasas.atimtiAuto();
+                break;
+            case 5:
+            case 6:
+                klientuSarasas.ziuretiNuomotuSarasas();
+            case 7:
+            case 8:
+                System.exit(0);
 
+
+        }
+    }
     public void pridekAutomobili(Automobilis automobilis){
         automobiliuSarasas.add(automobilis);
         System.out.println("Pridetas automobilis: " + autoInfo(automobilis));
@@ -18,7 +47,7 @@ public class Nuoma {
         System.out.println("Koks automobilio tipas? 1 - Naftos kuro, 2 - Elektromobilis.");
         int pasirinkimas = scanner.nextInt();
         scanner.nextLine();
-        try{
+
 
             System.out.println("Marke: ");
             String marke = scanner.nextLine();
@@ -43,11 +72,6 @@ public class Nuoma {
             }else{
                 System.out.println("Tokio automobilio prideti negalime.");
             }
-        }catch (Exception e){
-            System.out.println("Kazka ne taip suvedete, bandykite dar karta.");
-
-        }
-
 
     }
     public void pasiimkAutomobili(){
@@ -78,4 +102,29 @@ public class Nuoma {
     public String autoInfo(Automobilis auto){
         return auto.getMarke() + "|" + auto.getModelis() + "|" + auto.getMetai() + "|" + auto.getKaina();
     }
+
+    public static List<Automobilis> getAutomobiliuSarasas() {
+        return automobiliuSarasas;
+    }
+
+    public void defaultAuto(){
+        ElektrinisAutomobilis prius = new ElektrinisAutomobilis("Toyota prius", "S250", "2020",30, 3);
+        NaftosKuroAutomobilis bmw = new NaftosKuroAutomobilis("BMW", "E3", "2024",50, 60);
+        Automobilis mb = new ElektrinisAutomobilis("Mercedes-Benz", "C320", "2007",40, 40);
+        Automobilis audi = new ElektrinisAutomobilis("Audi", "A8", "2020",35, 2);
+        ElektrinisAutomobilis prius1 = new ElektrinisAutomobilis("Toyota prius", "H250", "2019",30, 3);
+        NaftosKuroAutomobilis bmw1 = new NaftosKuroAutomobilis("BMW", "M3", "2023",55, 59);
+        Automobilis mb1 = new ElektrinisAutomobilis("Mercedes-Benz", "C220", "2005",45, 50);
+        Automobilis audi1 = new ElektrinisAutomobilis("Audi", "A6", "2021",37, 10);
+        automobiliuSarasas.add(prius);
+        automobiliuSarasas.add(bmw);
+        automobiliuSarasas.add(mb);
+        automobiliuSarasas.add(audi);
+        automobiliuSarasas.add(prius1);
+        automobiliuSarasas.add(bmw1);
+        automobiliuSarasas.add(mb1);
+        automobiliuSarasas.add(audi1);
+    }
+
+
 }
