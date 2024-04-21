@@ -53,4 +53,8 @@ public class Klientas {
     public Map<Automobilis, Integer> getNuomotuAutomobiliuSarasas() {
         return nuomotuAutomobiliuSarasas;
     }
+
+    public String klientoInfo(){
+        return getVardas() + " " + getPavarde();
+    }
 }

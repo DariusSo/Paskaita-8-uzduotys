@@ -29,6 +29,7 @@ public class Nuoma {
                 klientuSarasas.atimtiAuto();
                 break;
             case 5:
+                klientuSarasas.klientoNuomojamasAutomobilis();
             case 6:
                 klientuSarasas.ziuretiNuomotuSarasas();
             case 7:
@@ -125,6 +126,5 @@ public class Nuoma {
         automobiliuSarasas.add(mb1);
         automobiliuSarasas.add(audi1);
     }
-
 
 }
