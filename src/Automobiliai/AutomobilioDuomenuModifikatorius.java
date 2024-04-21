@@ -14,13 +14,15 @@ public abstract class AutomobilioDuomenuModifikatorius {
         return auto;
     }
 
-    public Automobilis duomenuModifikatorius(Automobilis auto, long rida){
-        auto.setRida(rida);
-        return auto;
-    }
-    void pridedamRida(Automobilis a){
 
+    void pridedamRida(Automobilis a){
+        Scanner sk = new Scanner(System.in);
+        System.out.println("Kokia rida?");
+        long rida = sk.nextInt();
+        a.setRida(rida);
+        System.out.println("Automobilio " + a.autoInfo() + " rida pakeista i " + rida);
     }
+
 
     abstract void pridedamRida(ElektrinisAutomobilis a);
 }

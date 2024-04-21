@@ -1,6 +1,6 @@
 package Automobiliai;
 
-public class Automobilis {
+public abstract class Automobilis {
     private String marke;
     private String modelis;
     private String metai;
@@ -56,5 +56,18 @@ public class Automobilis {
 
     public void setKaina(double kaina) {
         this.kaina = kaina;
+    }
+    public NaftosKuroAutomobilis duomenuModifikatorius(NaftosKuroAutomobilis auto, double kuroSanaudos) {
+        auto.setKuroSanaudos100km(kuroSanaudos);
+        return auto;
+    }
+    public ElektrinisAutomobilis duomenuModifikatorius(ElektrinisAutomobilis auto, double baterijosKrovimas) {
+        auto.setBaterijosKrovimoLaikas(baterijosKrovimas);
+        return auto;
+    }
+
+    public Automobilis duomenuModifikatorius(Automobilis auto, long rida){
+        auto.setRida(rida);
+        return auto;
     }
 }

@@ -17,4 +17,6 @@ public class NaftosKuroAutomobilis extends Automobilis{
     public void setKuroSanaudos100km(double kuroSanaudos100km) {
         this.kuroSanaudos100km = kuroSanaudos100km;
     }
+
+
 }

@@ -61,7 +61,7 @@ public class KlientuSarasas {
         String pavarde = scanner.nextLine();
         for (Klientas k : klientuSarasas){
             if (k.getPavarde().equals(pavarde)){
-                System.out.println("Klientas :" + k.klientoInfo() + " turejo sias masinas: ");
+                System.out.println("Klientas: " + k.klientoInfo() + " turejo sias masinas: ");
                 for (Map.Entry<Automobilis, Integer> set : k.getNuomotuAutomobiliuSarasas().entrySet()){
                     System.out.println(set.getKey().autoInfo() + "|" + set.getValue() + " 10 dienu.");
                 }
@@ -73,9 +73,9 @@ public class KlientuSarasas {
         String pavarde = scanner.nextLine();
         for(Klientas k : klientuSarasas){
             if (k.getPavarde().equals(pavarde)){
-                return "Kliento " + k.klientoInfo() + "nuomojamas automobilis:" + klientas1.getDabarNuomojamas().autoInfo();
+                System.out.println("Kliento " + k.klientoInfo() + " dabar nuomojamas automobilis yra: " + k.getDabarNuomojamas().autoInfo());
             }
         }
-        return null;
+        return "";
     }
 }
